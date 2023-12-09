@@ -1,4 +1,5 @@
 import re
+import time
 
 
 class location:
@@ -126,11 +127,13 @@ def get_closest_seed_loc_from_ranges(input_doc):
 
 
 def main(input_doc):
+    start_time = time.time()
     print("---------------------")
     print("Day 5 " + '"' + input_doc + '"')
     print("Solution (Part 1): " + str(get_closest_seed_loc(input_doc)))             # 486613012
     print("Solution (Part 2): " + str(get_closest_seed_loc_from_ranges(input_doc))) # 56931769
     print("---------------------")
+    print(" - Process took " + str((time.time() - start_time) * 1000) + "ms")
 
 
 main("input.txt")
