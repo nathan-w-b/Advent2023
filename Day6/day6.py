@@ -66,7 +66,7 @@ def main(input_doc):
     print("---------------------")
     print("Day 6 " + '"' + input_doc + '"')
     print("Solution (Part 1): " + str(get_best_times_multiplied(input_doc)))    # 1624896
-    print("Solution (Part 2): " + str(get_best_time_part_two(input_doc)))       #
+    print("Solution (Part 2): " + str(get_best_time_part_two(input_doc)))       # 32583852
     print("---------------------")
     print(" - Process took " + str((time.time() - start_time) * 1000) + "ms")
 
