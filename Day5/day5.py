@@ -105,7 +105,7 @@ def get_closest_seed_loc_from_ranges(input_doc):
         else:
             working_range.update_range(int(seeds[x]))
             seed_ranges.append(working_range)
-    seed_ranges.sort(key=lambda x: x.start, reverse=False)
+    seed_ranges.sort(key=lambda x: x.start_loc, reverse=False)
     for line in f:
         if not line == "\n" and not re.match(".*map", line):
             data = re.split("\s", line)
@@ -118,11 +118,11 @@ def get_closest_seed_loc_from_ranges(input_doc):
                 else:
                     working_index += 1
         elif re.match(".*map", line):
-            seed_ranges.sort(key=lambda x: x.start, reverse=False)
+            seed_ranges.sort(key=lambda x: x.start_loc, reverse=False)
             for seed_range in seed_ranges:
                 seed_range.translated = False
     f.close()
-    seed_ranges.sort(key=lambda x: x.start, reverse=False)
+    seed_ranges.sort(key=lambda x: x.start_loc, reverse=False)
     return seed_ranges[0].start
 
 
